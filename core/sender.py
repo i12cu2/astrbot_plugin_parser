@@ -57,7 +57,7 @@ class MessageSender:
     def _to_file_uri(self, path: Path) -> str:
         if not path.is_absolute():
             path = path.resolve()
-        return path.as_uri()
+        return f"file:///{path}"
 
     @staticmethod
     def _iter_contents(result: ParseResult):
